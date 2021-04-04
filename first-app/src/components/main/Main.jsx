@@ -4,7 +4,7 @@ import MyPosts from "./MyPosts/MyPosts"
 
 const Main = () => {
     return (
-        <main className={s.main}>
+        <main>
             <div>
                 <img src="https://www.videoneat.com/wp-content/uploads/Rise-of-the-Mammals.jpg" alt="Nature" />
             </div>
