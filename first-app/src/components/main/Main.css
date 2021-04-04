@@ -1,0 +1,8 @@
+.app-main {
+    grid-area: main;
+    background-color: lightblue;
+  }
+  
+  .app-main img {
+    width: 1200px;
+  }
