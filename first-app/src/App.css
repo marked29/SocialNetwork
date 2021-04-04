@@ -11,26 +11,3 @@
   grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
 }
-
-.app-header {
-  grid-area: header;
-  background-color: lightgray;  
-}
-
-.app-header img {
-  width: 100px;
-}
-
-.app-nav {
-  grid-area: nav;
-  background-color: pink;
-}
-
-.app-main {
-  grid-area: main;
-  background-color: lightblue;
-}
-
-.app-main img {
-  width: 1200px;
-}

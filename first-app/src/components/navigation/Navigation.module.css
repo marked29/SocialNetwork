@@ -1,4 +1,8 @@
-.app-nav {
+.nav {
     grid-area: nav;
     background-color: pink;
-  }
+}
+
+.item {
+    color:white;
+}
