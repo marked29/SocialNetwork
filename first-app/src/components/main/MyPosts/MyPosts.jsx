@@ -9,6 +9,8 @@ const MyPosts = () => {
         { id: 3, msg: 'Do you really want to continue ?', likes: 112},
     ]
 
+    let postsCollection = messagesData.map(post => <Post message={post.msg} like={post.likes}/>)
+
     return (
         <div>
             <h3>My Post</h3>
@@ -19,9 +21,7 @@ const MyPosts = () => {
             </div>
             
             <div>
-                <Post message={messagesData[0].msg} like={messagesData[0].likes}/>
-                <Post message={messagesData[1].msg} like={messagesData[1].likes}/>
-                <Post message={messagesData[2].msg} like={messagesData[2].likes}/>
+                {postsCollection}
             </div>
         </div>
     );
