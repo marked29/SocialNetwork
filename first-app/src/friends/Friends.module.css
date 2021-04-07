@@ -1,0 +1,17 @@
+.wrapper{
+    grid-area: friends;
+    background-color: pink;
+}
+
+.friend_wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.friend_container img{
+    width: 50px;
+}
+
+.friend_container div{
+    text-align: center;
+}

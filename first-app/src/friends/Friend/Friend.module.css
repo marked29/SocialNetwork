@@ -1,0 +1,8 @@
+.friend_container img{
+    width: 50px;
+    border-radius: 50px;
+}
+
+.friend_container div{
+    text-align: center;
+}

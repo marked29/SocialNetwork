@@ -1,3 +1,5 @@
+const avatars = 'https://i.pinimg.com/236x/2f/8c/ff/2f8cffcfd465c769a1c2f6e591d56eae.jpg';
+
 let state = {
     profilePage: {
         postsData: [
@@ -9,17 +11,26 @@ let state = {
     
     messagesPage: {
         dialogsData: [
-            { id: 1, name: 'Andrew' },
-            { id: 2, name: 'Kolya' },
-            { id: 3, name: 'Olya' },
+            { id: 1, name: 'Andrew', avatar: avatars },
+            { id: 2, name: 'Kolya', avatar: avatars },
+            { id: 3, name: 'Olya', avatar: avatars },
         ],
     
         messagesData: [
-            { id: 1, data: 'Hello, Drew' },
-            { id: 2, data: 'Bye, Nik' },
-            { id: 3, data: 'Welcome, Olya' },
+            { id: 0, data: 'Hello, Its Mark', avatar: avatars },
+            { id: 1, data: 'Hello, Drew', avatar: avatars },
+            { id: 2, data: 'Bye, Nik', avatar: avatars },
+            { id: 3, data: 'Welcome, Olya', avatar: avatars },
         ],
-    }
+    },
+
+    friendsPage: {
+        friendsData: [
+            { id: 1, name: 'Andrew', avatar: avatars},
+            { id: 2, name: 'Kolya', avatar: avatars},
+            { id: 3, name: 'Olya', avatar: avatars},
+        ],
+    },
     
 }
 

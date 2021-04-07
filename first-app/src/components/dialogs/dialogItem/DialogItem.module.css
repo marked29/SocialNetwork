@@ -1,0 +1,8 @@
+.dialogsItems {
+    display: flex;
+}
+
+.dialogsItems img{
+    width: 50px;
+    border-radius: 10px;
+}

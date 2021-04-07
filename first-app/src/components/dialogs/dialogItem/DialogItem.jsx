@@ -3,10 +3,11 @@ import s from './DialogItem.module.css'
 
 const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;
-    
+
     return (
         <div className={s.dialogsItems}>
-           <NavLink to={path}><div className={s.dialog + ' ' + s.active}>{props.name}</div></NavLink>
+            <img src={props.avatar} alt="Avatar" />
+            <NavLink to={path}><div className={s.dialog + ' ' + s.active}>{props.name}</div></NavLink>
         </div>
     );
 

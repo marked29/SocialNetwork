@@ -1,0 +1,19 @@
+.message_wrapper{
+    display: flex;
+}
+
+.left {
+    justify-content: flex-end;
+}
+
+.message {
+    display: flex;
+    padding: 4px;
+    color: white;
+}
+
+.message img{
+    width: 20px;
+    border-radius: 20px;
+}
+

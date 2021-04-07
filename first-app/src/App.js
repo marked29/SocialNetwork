@@ -10,7 +10,7 @@ import Dialogs from './components/dialogs/Dialogs';
 import Settings from './components/settings/Settings';
 import Music from './components/music/Music';
 import News from './components/news/News';
-
+import Friends from './friends/Friends'
 
 const App = (props) => {
   return (
@@ -18,6 +18,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <Navigation />
+        <Friends friends={props.appState.friendsPage.friendsData}/>
         <div className="app-wrapper-content">
           <Route path='/main' render={ () => <Main posts={props.appState.profilePage.postsData}/>} />
           <Route path='/dialogs' render={ () => <Dialogs dialogs={props.appState.messagesPage.dialogsData} messages={props.appState.messagesPage.messagesData}/>} />
