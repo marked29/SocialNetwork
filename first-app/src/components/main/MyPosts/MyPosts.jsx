@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Post from "./Post/Post";
-import { rerenderEntireTree } from "../../../render";
 
 const MyPosts = (props) => {
 

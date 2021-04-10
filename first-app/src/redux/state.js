@@ -1,8 +1,8 @@
-import { rerenderEntireTree } from "../render";
 
 const avatars = 'https://i.pinimg.com/236x/2f/8c/ff/2f8cffcfd465c769a1c2f6e591d56eae.jpg';
 const avatar = 'https://html5css.ru/howto/img_avatar2.png';
 
+let rerenderEntireTree = () => console.log("State was changed");
 
 export let state = {
     profilePage: {
@@ -38,7 +38,8 @@ export let state = {
     
 }
 
-export let addPost = () => {
+
+export const addPost = () => {
     let newPost = { 
         id: 5,
         msg: state.profilePage.newPostText,
@@ -49,7 +50,7 @@ export let addPost = () => {
     rerenderEntireTree(state);
 }
 
-export let sendMessage = () => {
+export const sendMessage = () => {
     let newMessage = { 
         id: 0,
         data: state.messagesPage.newMessageText,
@@ -61,9 +62,15 @@ export let sendMessage = () => {
     rerenderEntireTree(state);
 }
 
-export let updateText = (newText) => {
+export const updateText = (newText) => {
     state.profilePage.newPostText = newText;
+    state.messagesPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
+
+export const subscirbe = (observer) => {
+    rerenderEntireTree = observer;
+}
+
 
 export default state;
