@@ -12,6 +12,7 @@ import Music from './components/music/Music';
 import News from './components/news/News';
 import Friends from './friends/Friends'
 
+
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -20,8 +21,8 @@ const App = (props) => {
         <Navigation />
         <Friends friends={props.appState.friendsPage.friendsData}/>
         <div className="app-wrapper-content">
-          <Route path='/main' render={ () => <Main posts={props.appState.profilePage.postsData}/>} />
-          <Route path='/dialogs' render={ () => <Dialogs dialogs={props.appState.messagesPage.dialogsData} messages={props.appState.messagesPage.messagesData}/>} />
+          <Route path='/main' render={ () => <Main profilePage={props.appState.profilePage} addPost={props.addPost} updateText={props.updateText}/>} />
+          <Route path='/dialogs' render={ () => <Dialogs dialogs={props.appState.messagesPage.dialogsData} messages={props.appState.messagesPage.messagesData} sendMessage={props.sendMessage} updateText={props.updateText}/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
