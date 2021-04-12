@@ -88,4 +88,10 @@ let store = {
     }
 }
 
+export const addSendMessageActionCreator = () => { return {type: 'SEND-MESSAGE'} }
+export const addAddPostActionCreator = () => { return {type: 'ADD-POST'} }
+
+export const addUpdateNewTextActionCreator = (txt) => { return {type: 'UPDATE-TEXT', text: txt }}
+
+
 export default store;

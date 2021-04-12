@@ -4,6 +4,9 @@ import DialogItem from './dialogItem/DialogItem'
 import Message from './message/Message'
 import React from "react";
 
+import {addSendMessageActionCreator,addUpdateNewTextActionCreator} from '../../redux/state'
+
+
 const Dialogs = (props) => {
     let dialogsItems = props.messagesPage.dialogsData.map(item => <DialogItem id={item.id} name={item.name} avatar={item.avatar} />);
     let dialogsContents = props.messagesPage.messagesData.map(item => <Message id={item.id} content={item.data} avatar={item.avatar} />);
@@ -11,12 +14,12 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
     
     const sendMessage = () => {
-        props.dispatch({type:'SEND-MESSAGE'});
+        props.dispatch(addSendMessageActionCreator());
     }
 
     const onPostChange = () => {
         let txt = newMessageElement.current.value;
-        props.dispatch({type: 'UPDATE-TEXT', text: txt });
+        props.dispatch(addUpdateNewTextActionCreator(txt));
     }
 
     return (
