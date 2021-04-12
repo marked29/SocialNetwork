@@ -36,11 +36,11 @@ let store = {
         },   
     },    
 
-    rerenderEntireTree() { 
+    _subscribe() { 
         console.log("State was changed"); 
     },
 
-    addPost() {
+    _addPost() {
         let newPost = { 
             id: 5,
             msg: this._state.profilePage.newPostText,
@@ -48,10 +48,10 @@ let store = {
         };
         this._state.profilePage.postsData.push(newPost);
         this._state.profilePage.newPostText = '';
-        this.rerenderEntireTree(this._state);
+        this._subscribe(this._state);
     },
 
-    sendMessage() {
+    _sendMessage() {
         let newMessage = { 
             id: 0,
             data: this._state.messagesPage.newMessageText,
@@ -59,18 +59,33 @@ let store = {
         };
         this._state.messagesPage.messagesData.push(newMessage);
         this._state.messagesPage.newMessageText = '';
-        this.rerenderEntireTree(this._state);
+        this._subscribe(this._state);
     },
 
-    updateText(newText) {
+    _updateText(newText) {
         this._state.profilePage.newPostText = newText;
         this._state.messagesPage.newMessageText = newText;
-        this.rerenderEntireTree(this._state);
+        this._subscribe(this._state);
     },
 
+
+
+
     subscirbe(observer) {
-        this.rerenderEntireTree = observer;
+        this._subscribe = observer;
     },
+
+    dispatch(action) {
+        if (action.type == 'ADD-POST') {
+            this._addPost();
+        } else if (action.type == 'UPDATE-TEXT') {
+            this._updateText(action.text);
+        } else if (action.type == 'SEND-MESSAGE' ) {
+            this._sendMessage();
+        } else {
+            alert('Unknown action');
+        }
+    }
 }
 
 export default store;
