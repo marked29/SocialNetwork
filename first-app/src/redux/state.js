@@ -1,4 +1,9 @@
 
+import profileReducer from './profilePage-reducer'
+import messagesReducer from './messagesPage-reducer'
+import textUpdateReducer from './updateTextArea-reducer'
+
+
 const avatars = 'https://i.pinimg.com/236x/2f/8c/ff/2f8cffcfd465c769a1c2f6e591d56eae.jpg';
 const avatar = 'https://html5css.ru/howto/img_avatar2.png';
 
@@ -63,8 +68,7 @@ let store = {
     },
 
     _updateText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._state.messagesPage.newMessageText = newText;
+
         this._subscribe(this._state);
     },
 
@@ -76,15 +80,12 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type == 'ADD-POST') {
-            this._addPost();
-        } else if (action.type == 'UPDATE-TEXT') {
-            this._updateText(action.text);
-        } else if (action.type == 'SEND-MESSAGE' ) {
-            this._sendMessage();
-        } else {
-            alert('Unknown action');
-        }
+
+        this._state = textUpdateReducer(this._state, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+
+        this._subscribe(this._state);
     }
 }
 
