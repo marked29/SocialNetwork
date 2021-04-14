@@ -4,8 +4,8 @@ import DialogItem from './dialogItem/DialogItem'
 import Message from './message/Message'
 import React from "react";
 
-import {addSendMessageActionCreator,addUpdateNewTextActionCreator} from '../../redux/state'
-
+import {addSendMessageActionCreator} from '../../redux/messagesPage-reducer'
+import {addUpdateNewTextActionCreator} from '../../redux/updateTextArea-reducer'
 
 const Dialogs = (props) => {
     let dialogsItems = props.messagesPage.dialogsData.map(item => <DialogItem id={item.id} name={item.name} avatar={item.avatar} />);

@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Post from "./Post/Post";
-import {addAddPostActionCreator, addUpdateNewTextActionCreator} from '../../../redux/state'
+import {addAddPostActionCreator} from '../../../redux/profilePage-reducer'
+import {addUpdateNewTextActionCreator} from '../../../redux/updateTextArea-reducer'
 
 const MyPosts = (props) => {
 

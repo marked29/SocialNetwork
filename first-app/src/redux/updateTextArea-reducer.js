@@ -6,4 +6,6 @@ const textUpdateReducer = (state, action) => {
     return state;
 }
 
+export const addUpdateNewTextActionCreator = (txt) => { return {type: 'UPDATE-TEXT', text: txt }}
+
 export default textUpdateReducer;

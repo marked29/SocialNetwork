@@ -15,14 +15,14 @@ let store = {
             ],
             newPostText: ''
         },
-        
+
         messagesPage: {
             dialogsData: [
                 { id: 1, name: 'Andrew', avatar: avatars },
                 { id: 2, name: 'Kolya', avatar: avatars },
                 { id: 3, name: 'Olya', avatar: avatar },
             ],
-        
+
             messagesData: [
                 { id: 0, data: 'Hello, Its Mark', avatar: avatars },
                 { id: 1, data: 'Hello, Drew', avatar: avatars },
@@ -31,49 +31,19 @@ let store = {
             ],
             newMessageText: ''
         },
-    
+
         friendsPage: {
             friendsData: [
-                { id: 1, name: 'Andrew', avatar: avatars},
-                { id: 2, name: 'Kolya', avatar: avatars},
-                { id: 3, name: 'Olya', avatar: avatars},
+                { id: 1, name: 'Andrew', avatar: avatars },
+                { id: 2, name: 'Kolya', avatar: avatars },
+                { id: 3, name: 'Olya', avatar: avatars },
             ],
-        },   
-    },    
-
-    _subscribe() { 
-        console.log("State was changed"); 
+        },
     },
 
-    _addPost() {
-        let newPost = { 
-            id: 5,
-            msg: this._state.profilePage.newPostText,
-            likes: Math.floor(Math.random() * 1000)
-        };
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._subscribe(this._state);
+    _subscribe() {
+        console.log("State was changed");
     },
-
-    _sendMessage() {
-        let newMessage = { 
-            id: 0,
-            data: this._state.messagesPage.newMessageText,
-            avatar: avatars
-        };
-        this._state.messagesPage.messagesData.push(newMessage);
-        this._state.messagesPage.newMessageText = '';
-        this._subscribe(this._state);
-    },
-
-    _updateText(newText) {
-
-        this._subscribe(this._state);
-    },
-
-
-
 
     subscirbe(observer) {
         this._subscribe = observer;
@@ -89,10 +59,6 @@ let store = {
     }
 }
 
-export const addSendMessageActionCreator = () => { return {type: 'SEND-MESSAGE'} }
-export const addAddPostActionCreator = () => { return {type: 'ADD-POST'} }
-
-export const addUpdateNewTextActionCreator = (txt) => { return {type: 'UPDATE-TEXT', text: txt }}
 
 
 export default store;
