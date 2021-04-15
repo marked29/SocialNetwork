@@ -27,6 +27,10 @@ const messagesReducer = (state = initialState, action) => {
         });
         state.newMessageText = '';
     }
+
+    if (action.type === 'UPDATE-TEXT') {
+        state.newMessageText = action.text;
+    }
     return state;
 }
 

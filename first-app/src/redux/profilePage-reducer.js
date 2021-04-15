@@ -15,6 +15,11 @@ const profileReducer = (state = initialState, action) => {
         state.postsData.push(newPost);
         state.newPostText = '';
     }
+
+    if (action.type === 'UPDATE-TEXT') {
+        state.newPostText = action.text;
+    }
+
     return state;
 }
 
