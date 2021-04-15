@@ -8,6 +8,7 @@ import {addSendMessageActionCreator} from '../../redux/messagesPage-reducer'
 import {addUpdateNewTextActionCreator} from '../../redux/updateTextArea-reducer'
 
 const Dialogs = (props) => {
+    debugger;
     let dialogsItems = props.messagesPage.dialogsData.map(item => <DialogItem id={item.id} name={item.name} avatar={item.avatar} />);
     let dialogsContents = props.messagesPage.messagesData.map(item => <Message id={item.id} content={item.data} avatar={item.avatar} />);
 

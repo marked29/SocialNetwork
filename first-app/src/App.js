@@ -19,7 +19,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <Navigation />
-        <Friends friends={props.appState.friendsPage.friendsData}/>
+        <Friends friendsPage={props.appState.friendsPage}/>
         <div className="app-wrapper-content">
           <Route path='/main' render={ () => <Main profilePage={props.appState.profilePage} dispatch={props.dispatch}/>} />
           <Route path='/dialogs' render={ () => <Dialogs messagesPage={props.appState.messagesPage} dispatch={props.dispatch}/>} />
