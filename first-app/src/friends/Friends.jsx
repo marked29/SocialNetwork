@@ -5,7 +5,6 @@ import classes from './Friends.module.css'
 
 
 const Friends = (props) => {
-  debugger;
   let friends = props.friendsPage.friendsData.map(friendDataItem => <Friend avatar={friendDataItem.avatar} name={friendDataItem.name}/>)
   return (
     <div className={classes.wrapper}>

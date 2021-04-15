@@ -8,19 +8,18 @@ import {addSendMessageActionCreator} from '../../redux/messagesPage-reducer'
 import {addUpdateNewTextActionCreator} from '../../redux/updateTextArea-reducer'
 
 const Dialogs = (props) => {
-    debugger;
     let dialogsItems = props.messagesPage.dialogsData.map(item => <DialogItem id={item.id} name={item.name} avatar={item.avatar} />);
     let dialogsContents = props.messagesPage.messagesData.map(item => <Message id={item.id} content={item.data} avatar={item.avatar} />);
 
     let newMessageElement = React.createRef();
     
     const sendMessage = () => {
-        props.dispatch(addSendMessageActionCreator());
+        props.sendMessage();
     }
 
     const onPostChange = () => {
         let txt = newMessageElement.current.value;
-        props.dispatch(addUpdateNewTextActionCreator(txt));
+        props.updateNewMessageText(txt);
     }
 
     return (
@@ -32,7 +31,7 @@ const Dialogs = (props) => {
                 {dialogsContents}
 
                 <div>
-                    <textarea onChange={onPostChange} ref={newMessageElement} value={props.messagesPage.newMessageText}/>
+                    <textarea onChange={onPostChange} ref={newMessageElement} value={props.newMessageText}/>
                     <button onClick={ () => { sendMessage() }}>Send</button>
                 </div>
             </div>

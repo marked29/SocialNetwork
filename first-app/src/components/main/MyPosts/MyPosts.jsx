@@ -7,26 +7,24 @@ import {addAddPostActionCreator} from '../../../redux/profilePage-reducer'
 import {addUpdateNewTextActionCreator} from '../../../redux/updateTextArea-reducer'
 
 const MyPosts = (props) => {
-
     let postsCollection = props.posts.postsData.map(post => <Post message={post.msg} like={post.likes}/>)
     
     let newPostElement = React.createRef();
 
-    const addPost = () => {
-        props.dispatch(addAddPostActionCreator());
+    const onAddPost = () => {
+        props.addPost();
     }
 
     const onPostChange = () => {
         let txt = newPostElement.current.value;
-        props.dispatch(addUpdateNewTextActionCreator(txt));
+        props.updateNewPostText(txt);
     }
-
     return (
         <div>
             <h3>My Post</h3>
             <div>
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.posts.newPostText}/>
-                <button onClick={ () => { addPost()}}>Add Post</button>
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
+                <button onClick={ () => { onAddPost()}}>Add Post</button>
                 <button>Remove Post</button>
             </div>
             

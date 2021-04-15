@@ -9,7 +9,6 @@ import store from './redux/redux-store';
 
 
 let rerenderEntireTree = (state) => {
-    debugger;
     ReactDOM.render(<App appState={state}
                          dispatch={store.dispatch.bind(store)}
                     />, 
@@ -18,7 +17,6 @@ let rerenderEntireTree = (state) => {
 
 rerenderEntireTree(store.getState());
 store.subscribe(() => {
-    debugger;
     let state = store.getState();
     rerenderEntireTree(state);
 });

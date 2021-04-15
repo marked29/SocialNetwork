@@ -2,7 +2,7 @@ let initialState = {
     postsData: [
         { id: 0, msg: 'Very first post kinda placeholder', likes: 0 },
     ],
-    newPostText: ''
+    newPostText: "Helloy"
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const profileReducer = (state = initialState, action) => {
             likes: Math.floor(Math.random() * 1000)
         };
         state.postsData.push(newPost);
-        state.newPostText = '';
+        state.newPostText = "";
     }
 
     if (action.type === 'UPDATE-TEXT') {

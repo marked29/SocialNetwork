@@ -6,7 +6,7 @@ import Navigation from './components/navigation/Navigation';
 
 import Header from './components/header/Header';
 import Main from './components/main/Main';
-import Dialogs from './components/dialogs/Dialogs';
+import DialogsComponent from './components/dialogs/DialogsComponent';
 import Settings from './components/settings/Settings';
 import Music from './components/music/Music';
 import News from './components/news/News';
@@ -22,7 +22,7 @@ const App = (props) => {
         <Friends friendsPage={props.appState.friendsPage}/>
         <div className="app-wrapper-content">
           <Route path='/main' render={ () => <Main profilePage={props.appState.profilePage} dispatch={props.dispatch}/>} />
-          <Route path='/dialogs' render={ () => <Dialogs messagesPage={props.appState.messagesPage} dispatch={props.dispatch}/>} />
+          <Route path='/dialogs' render={ () => <DialogsComponent messagesPage={props.appState.messagesPage} dispatch={props.dispatch}/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
