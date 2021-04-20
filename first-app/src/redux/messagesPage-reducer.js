@@ -15,7 +15,7 @@ let initialState = {
         { id: 2, data: 'Bye, Nik', avatar: avatars },
         { id: 3, data: 'Welcome, Olya', avatar: avatar },
     ],
-    newMessageText: ''
+    newMessageText: " "
 };
 
 const messagesReducer = (state = initialState, action) => {

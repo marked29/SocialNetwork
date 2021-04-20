@@ -10,7 +10,7 @@ import DialogsComponent from './components/dialogs/DialogsComponent';
 import Settings from './components/settings/Settings';
 import Music from './components/music/Music';
 import News from './components/news/News';
-import Friends from './friends/Friends'
+import FriendsContainer from './friends/FriendsContainer'
 
 
 const App = (props) => {
@@ -19,10 +19,10 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <Navigation />
-        <Friends friendsPage={props.appState.friendsPage}/>
+        <FriendsContainer />
         <div className="app-wrapper-content">
-          <Route path='/main' render={ () => <Main profilePage={props.appState.profilePage} dispatch={props.dispatch}/>} />
-          <Route path='/dialogs' render={ () => <DialogsComponent messagesPage={props.appState.messagesPage} dispatch={props.dispatch}/>} />
+          <Route path='/main' render={ () => <Main/>} />
+          <Route path='/dialogs' render={ () => <DialogsComponent/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />

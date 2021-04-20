@@ -7,6 +7,7 @@ import {addAddPostActionCreator} from '../../../redux/profilePage-reducer'
 import {addUpdateNewTextActionCreator} from '../../../redux/updateTextArea-reducer'
 
 const MyPosts = (props) => {
+    debugger;
     let postsCollection = props.posts.postsData.map(post => <Post message={post.msg} like={post.likes}/>)
     
     let newPostElement = React.createRef();

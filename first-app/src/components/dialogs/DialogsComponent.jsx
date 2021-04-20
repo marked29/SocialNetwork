@@ -2,29 +2,36 @@ import Message from './message/Message'
 import React from "react";
 import Dialogs from './Dialogs'
 
-import {addSendMessageActionCreator} from '../../redux/messagesPage-reducer'
-import {addUpdateNewTextActionCreator} from '../../redux/updateTextArea-reducer'
+import { addSendMessageActionCreator } from '../../redux/messagesPage-reducer'
+import { addUpdateNewTextActionCreator } from '../../redux/updateTextArea-reducer'
+import StoreContext from '../../StoreContext';
+import store from '../../redux/redux-store';
 
-const DialogsComponent = (props) => {
-    debugger;
-
-    let newMessageElement = React.createRef();
-    
-    const sendMessage = () => {
-        props.dispatch(addSendMessageActionCreator());
-    }
-
-    const onPostChange = (txt) => {
-        props.dispatch(addUpdateNewTextActionCreator(txt));
-    }
-
+const DialogsComponent = () => {
     return (
         <div>
-            <Dialogs sendMessage = {sendMessage} 
-                     updateNewMessageText = {onPostChange}
-                     messagesPage={props.messagesPage}
-                     newMessageText={props.messagesPage.newMessageText}
-                    />
+            <StoreContext.Consumer>
+                {
+                    store => {
+                        let state = store.getState();
+
+                        const sendMessage = () => {
+                            store.dispatch(addSendMessageActionCreator());
+                        }
+                    
+                        const onPostChange = (txt) => {
+                            store.dispatch(addUpdateNewTextActionCreator(txt));
+                        }
+
+                        return <Dialogs sendMessage={sendMessage}
+                            updateNewMessageText={onPostChange}
+                            messagesPage={state.messagesPage}
+                            newMessageText={state.messagesPage.newMessageText}
+                        />
+                    }
+
+                }
+            </StoreContext.Consumer>
         </div>
     );
 

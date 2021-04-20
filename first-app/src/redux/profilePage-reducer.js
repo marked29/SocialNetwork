@@ -2,7 +2,7 @@ let initialState = {
     postsData: [
         { id: 0, msg: 'Very first post kinda placeholder', likes: 0 },
     ],
-    newPostText: "Helloy"
+    newPostText: " "
 };
 
 const profileReducer = (state = initialState, action) => {
