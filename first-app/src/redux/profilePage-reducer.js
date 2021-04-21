@@ -12,12 +12,17 @@ const profileReducer = (state = initialState, action) => {
             msg: state.newPostText,
             likes: Math.floor(Math.random() * 1000)
         };
-        state.postsData.push(newPost);
-        state.newPostText = "";
+        debugger;
+        let newState = {...state}
+        newState.postsData.push(newPost);
+        newState.newPostText = '';
+        return newState;
     }
 
     if (action.type === 'UPDATE-TEXT') {
-        state.newPostText = action.text;
+        let newState = {...state}
+        newState.newPostText = action.text;
+        return newState
     }
 
     return state;

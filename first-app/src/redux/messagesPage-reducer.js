@@ -20,17 +20,22 @@ let initialState = {
 
 const messagesReducer = (state = initialState, action) => {
     if (action.type === 'SEND-MESSAGE') {
-        state.messagesData.push({
+        let newState = {...state}
+        newState.messagesData.push({
             id: 0,
             data: state.newMessageText,
             avatar: avatars
         });
-        state.newMessageText = '';
+        newState.newMessageText = '';
+        return newState;
     }
 
     if (action.type === 'UPDATE-TEXT') {
-        state.newMessageText = action.text;
+        let newState = {...state}
+        newState.newMessageText = action.text;
+        return newState;
     }
+
     return state;
 }
 

@@ -4,37 +4,23 @@ import Dialogs from './Dialogs'
 
 import { addSendMessageActionCreator } from '../../redux/messagesPage-reducer'
 import { addUpdateNewTextActionCreator } from '../../redux/updateTextArea-reducer'
-import StoreContext from '../../StoreContext';
-import store from '../../redux/redux-store';
+import {connect} from 'react-redux'
 
-const DialogsComponent = () => {
-    return (
-        <div>
-            <StoreContext.Consumer>
-                {
-                    store => {
-                        let state = store.getState();
+let f1 = (state) => {
 
-                        const sendMessage = () => {
-                            store.dispatch(addSendMessageActionCreator());
-                        }
-                    
-                        const onPostChange = (txt) => {
-                            store.dispatch(addUpdateNewTextActionCreator(txt));
-                        }
-
-                        return <Dialogs sendMessage={sendMessage}
-                            updateNewMessageText={onPostChange}
-                            messagesPage={state.messagesPage}
-                            newMessageText={state.messagesPage.newMessageText}
-                        />
-                    }
-
-                }
-            </StoreContext.Consumer>
-        </div>
-    );
-
+    return {
+        messagesPage: state.messagesPage
+    }
 }
+
+let f2 = (dispatch) => {
+    return {
+        sendMessage: () => dispatch(addSendMessageActionCreator()),
+        updateNewMessageText: txt => dispatch(addUpdateNewTextActionCreator(txt))
+        
+    }
+}
+
+let DialogsComponent = connect(f1,f2)(Dialogs);
 
 export default DialogsComponent

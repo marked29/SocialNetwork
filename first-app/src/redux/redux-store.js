@@ -6,7 +6,6 @@ import textUpdateReducer from './updateTextArea-reducer';
 
 
 let reducersList = combineReducers({
-    textReducer: textUpdateReducer,
     profilePage: profileReducer,
     messagesPage: messagesReducer,
     friendsPage: friendsReducer});
