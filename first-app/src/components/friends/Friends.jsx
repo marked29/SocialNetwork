@@ -9,7 +9,7 @@ const Friends = (props) => {
   return (
     <div className={classes.wrapper}>
       <h2>Friends</h2>
-      <div class={classes.friend_wrapper}>
+      <div className={classes.friend_wrapper}>
         {friends}
       </div>
     </div>

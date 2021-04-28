@@ -5,7 +5,7 @@ import classes from './Friend.module.css'
 
 const Friend = (props) => {
   return (
-      <div class={classes.friend_container}>
+      <div className={classes.friend_container}>
         <img src={props.avatar} alt="Avatar" />
         <div>{props.name}</div>
       </div>
