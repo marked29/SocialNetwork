@@ -1,0 +1,8 @@
+.wrapper {
+    display: flex;
+    background-color: #fff;
+}
+
+.avatar_wrapper {
+    width: 80px;
+}
