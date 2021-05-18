@@ -3,7 +3,7 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Main = (props) => {
+const Main = () => {
     return (
         <main>
             <ProfileInfo />
