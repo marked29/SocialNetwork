@@ -35,7 +35,7 @@ const usersReducer = (state = initialState, action) => {
     };
     return newState;
   } else if (action.type === "SET-USERS") {
-    return { ...state, usersData: [...state.usersData, ...action.users] };
+    return { ...state, usersData: action.users };
   } else if (action.type === "SET-CURRENT-PAGE") {
     return { ...state, currentPage: action.currentPage };
   }
