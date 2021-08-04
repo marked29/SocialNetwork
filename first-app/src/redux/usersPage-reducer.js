@@ -3,7 +3,7 @@ const photourl = "https://image.flaticon.com/icons/png/512/147/147144.png";
 let initialState = {
   usersData: [],
   pageSize: 5,
-  totalUsersCount: 20,
+  totalUsersCount: 0,
   currentPage: 1,
 };
 
@@ -38,6 +38,8 @@ const usersReducer = (state = initialState, action) => {
     return { ...state, usersData: action.users };
   } else if (action.type === "SET-CURRENT-PAGE") {
     return { ...state, currentPage: action.currentPage };
+  } else if (action.type === "SET-TOTAL-USERS-COUNT") {
+    return { ...state, totalUsersCount: action.totalUsersCount };
   }
   return state;
 };
@@ -54,9 +56,11 @@ export const addUnfollowActionCreator = (userId) => {
 export const addSetUsersActionCreator = (users) => {
   return { type: "SET-USERS", users };
 };
-
 export const addSetCurrentPage = (currentPage) => {
   return { type: "SET-CURRENT-PAGE", currentPage };
+};
+export const addSetTotalUsersCount = (totalUsersCount) => {
+  return { type: "SET-TOTAL-USERS-COUNT", totalUsersCount };
 };
 
 export default usersReducer;

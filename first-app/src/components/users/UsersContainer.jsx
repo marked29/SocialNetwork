@@ -1,7 +1,7 @@
 import Users from './Users'
 
 import { connect } from 'react-redux'
-import { addFollowActionCreator, addSetCurrentPage, addSetUsersActionCreator, addUnfollowActionCreator } from '../../redux/usersPage-reducer'
+import { addFollowActionCreator, addSetCurrentPage, addSetTotalUsersCount, addSetUsersActionCreator, addUnfollowActionCreator } from '../../redux/usersPage-reducer'
 
 
 let stateMapping = (state) => {
@@ -26,6 +26,9 @@ let dispatchMapping = (dispatch) => {
     },
     setCurrentPage: (currentPage) => {
       dispatch(addSetCurrentPage(currentPage))
+    },
+    setTotalUsersCount: (totalUsersCount) => {
+      dispatch(addSetTotalUsersCount(totalUsersCount))
     },
   }
 }
