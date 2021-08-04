@@ -6,3 +6,7 @@
 .avatar_wrapper {
     width: 80px;
 }
+
+.selected {
+    font-weight: bold;
+}
